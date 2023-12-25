@@ -58,7 +58,7 @@ const NewsAboutUs = () => {
                 className='w-40 h-40 object-cover rounded-full shadow-md'
               />
               <h3 className='text-xl font-bold mt-4'>John Doe</h3>
-              <p className='text-gray-600'>Editor-in-Chief</p>
+              <p className='text-gray-600'>Developer</p>
             </div>
 
             {/* Team member 2 */}
