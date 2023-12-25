@@ -1,5 +1,10 @@
 import React from "react";
 
+const details = [
+  { id: 1, name: "Yash", role: "Senior Developer" },
+  { id: 2, name: "Vaibhav", role: "Backend Developer" },
+  { id: 3, name: "Suresh", role: "Frontend Developer" },
+];
 const NewsAboutUs = () => {
   return (
     <div className='bg-gray-100 py-12'>
@@ -50,27 +55,18 @@ const NewsAboutUs = () => {
         <div className='mt-12'>
           <h2 className='text-3xl font-bold mb-4'>Meet Our Team</h2>
           <div className='flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-8'>
-            {/* Team member 1 */}
-            <div className='flex flex-col items-center'>
-              <img
-                src='https://sp-ao.shortpixel.ai/client/to_auto,q_lossy,ret_img/https://my.kumonglobal.com/wp-content/uploads/2022/03/Learn-from-Rowan-Atkinson_Kumon-Malaysia_530x530_NewsThumbnail.jpg' // Replace with team member 1 image URL
-                alt='Team Member 1'
-                className='w-40 h-40 object-cover rounded-full shadow-md'
-              />
-              <h3 className='text-xl font-bold mt-4'>John Doe</h3>
-              <p className='text-gray-600'>Developer</p>
-            </div>
-
-            {/* Team member 2 */}
-            <div className='flex flex-col items-center'>
-              <img
-                src='https://feeds.abplive.com/onecms/images/uploaded-images/2021/11/23/ec803eb776e07413737f3bbd662a3989_original.jpg?impolicy=abp_cdn&imwidth=650' // Replace with team member 2 image URL
-                alt='Team Member 2'
-                className='w-40 h-40 object-cover rounded-full shadow-md'
-              />
-              <h3 className='text-xl font-bold mt-4'>Jane Smith</h3>
-              <p className='text-gray-600'>Senior Reporter</p>
-            </div>
+            {/* Generate team member profiles */}
+            {details.map((member) => (
+              <div className='flex flex-col items-center' key={member.id}>
+                <img
+                  src={`https://t3.ftcdn.net/jpg/05/00/15/70/360_F_500157093_zuMAlp0UUZD49ojQKBL6U9vIpCUMiaLt.jpg`} // Placeholder image URL
+                  alt={`Team Member ${member.id}`}
+                  className='w-40 h-40 object-cover rounded-full shadow-md'
+                />
+                <h3 className='text-xl font-bold mt-4'>{member.name}</h3>
+                <p className='text-gray-600'>{member.role}</p>
+              </div>
+            ))}
           </div>
         </div>
       </div>
