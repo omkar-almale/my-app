@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 const details = [
@@ -57,15 +58,17 @@ const NewsAboutUs = () => {
           <div className='flex flex-col md:flex-row items-center justify-center space-y-6 md:space-y-0 md:space-x-8'>
             {/* Generate team member profiles */}
             {details.map((member) => (
-              <div className='flex flex-col items-center' key={member.id}>
-                <img
-                  src={`https://t3.ftcdn.net/jpg/05/00/15/70/360_F_500157093_zuMAlp0UUZD49ojQKBL6U9vIpCUMiaLt.jpg`} // Placeholder image URL
-                  alt={`Team Member ${member.id}`}
-                  className='w-40 h-40 object-cover rounded-full shadow-md'
-                />
-                <h3 className='text-xl font-bold mt-4'>{member.name}</h3>
-                <p className='text-gray-600'>{member.role}</p>
-              </div>
+              <Link href={`/about/${member.id}`} key={member.id}>
+                <div className='flex flex-col items-center' key={member.id}>
+                  <img
+                    src={`https://t3.ftcdn.net/jpg/05/00/15/70/360_F_500157093_zuMAlp0UUZD49ojQKBL6U9vIpCUMiaLt.jpg`} // Placeholder image URL
+                    alt={`Team Member ${member.id}`}
+                    className='w-40 h-40 object-cover rounded-full shadow-md'
+                  />
+                  <h3 className='text-xl font-bold mt-4'>{member.name}</h3>
+                  <p className='text-gray-600'>{member.role}</p>
+                </div>
+              </Link>
             ))}
           </div>
         </div>
